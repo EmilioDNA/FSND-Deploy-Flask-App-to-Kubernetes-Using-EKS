@@ -1,9 +1,9 @@
 
-FROM python:stretch 
+FROM python:stretch
 
 COPY . /app
 WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT [ "gunicorn", "-b", ":8080", "main:APP" ]
+ENTRYPOINT [ "gunicorn", "--workers=2", "-b", ":8080", "--workers=2",  "main:APP" ]

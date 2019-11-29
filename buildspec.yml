@@ -36,7 +36,7 @@ phases:
       - pwd
       - ls
 artifacts:
-  files: $CODEBUILD_SRC_DIR/build.json
+  files: build.json
 env:
   parameter-store:         
     JWT_SECRET: JWT_SECRET

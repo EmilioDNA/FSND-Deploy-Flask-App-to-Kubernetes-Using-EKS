@@ -29,6 +29,11 @@ spec:
       labels:
         app: simple-jwt-api
     spec:
+      tolerations:
+      - key: "hardware"
+        operator: "Equal"
+        value: "slow"
+        effect: "NoSchedule"
       containers:
         - name: simple-jwt-api
           image: CONTAINER_IMAGE
